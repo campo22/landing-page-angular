@@ -1,4 +1,9 @@
 {
-    "IDX.aI.enableInlineCompletion": true,
-    "IDX.aI.enableCodebaseIndexing": true
-}
+        "html.validate.scripts": false,
+        "html.validate.styles": false,
+        "html.validate.attributes": false,
+        "IDX.aI.enableInlineCompletion": true,
+        "IDX.aI.enableCodebaseIndexing": true
+    }
+    
+    

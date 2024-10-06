@@ -1,1 +1,6 @@
-<p>product-detail works!</p>
+<ng-container *ngIf="!loding">
+  <H1 [ngStyle]=""> AQUI ESTA EL DETALLE DE: {{product?.name|uppercase}} </H1>
+  <H2 [ngStyle]="{'color':color}">{{product?.price | currency}}</H2>
+  <H3 *ngIf="product?.description">{{product?.description| uppercase}}</H3>
+</ng-container>
+<ng-container *ngIf="loding"> <i style="color: blueviolet;"> Cargando informacion...</i> </ng-container>

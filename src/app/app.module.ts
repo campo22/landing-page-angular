@@ -6,6 +6,7 @@ import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,13 +14,15 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
     HomeComponent,
     ProductsComponent,
     ContactComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,//formulario tipo plantilla
+    ReactiveFormsModule// formularios reactivos
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

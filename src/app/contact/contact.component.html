@@ -1,1 +1,16 @@
-<p>contact works!</p>
+<div class="container">
+
+  <form #myForm="ngForm" (ngSubmit)="enviar()">
+    <div class="mb-3">
+      <label for="name" class="form-label">Nombre</label>
+      <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+</div>

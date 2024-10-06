@@ -6,16 +6,15 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },  // Ruta raíz
-  { path: 'products', component: ProductsComponent },  // Productos
-  { path: 'products/:productId', component: ProductDetailComponent },  // Detalle del producto
-  { path: 'contact', component: ContactComponent },  // Contacto
-  { path: '**', redirectTo: '', pathMatch: 'full' },  // Redirección de rutas desconocidas
+  { path: '', component: HomeComponent }, // Ruta raíz
+  { path: 'products', component: ProductsComponent }, // Productos
+  { path: 'products/:productId', component: ProductDetailComponent }, // Detalle del producto
+  { path: 'contact', component: ContactComponent }, // Contacto
+  { path: '**', redirectTo: '', pathMatch: 'full' }, // Redirección de rutas desconocidas
 ];
-
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

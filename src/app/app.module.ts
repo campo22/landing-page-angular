@@ -7,6 +7,8 @@ import { ProductsComponent } from './products/products.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DniComponent } from './contact/dni/dni.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -15,12 +17,15 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ProductsComponent,
     ContactComponent,
     ProductDetailComponent,
+    DniComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,//formulario tipo plantilla
-    ReactiveFormsModule// formularios reactivos
+    ReactiveFormsModule,  // formularios reactivos
+    HttpClientModule
+
   ],
   providers: [],
   bootstrap: [AppComponent],

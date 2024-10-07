@@ -1,16 +1,44 @@
 <div class="container">
+  <form [formGroup]="formularioContacto" (ngSubmit)="enviar()">
 
-  <form #myForm="ngForm" (ngSubmit)="enviar()">
     <div class="mb-3">
       <label for="name" class="form-label">Nombre</label>
-      <input type="text" class="form-control" id="name" aria-describedby="emailHelp">
+      <input [ngClass]="{'is-invalid': hasError('nombre','required')}" type="text" class="form-control" id="name"
+        name="name" formControlName="nombre">
+      <div class="form-text text-danger" *ngIf="hasError('nombre','required')">name invalido
+      </div>
     </div>
+
+    <div class="mb-3">
+      <label for="apellido" class="form-label">apellido</label>
+      <input [ngClass]="{'is-invalid': hasError('apellido','required')}" type="text" class="form-control" id="name"
+        name="name" formControlName="apellido">
+      <div class="form-text text-danger" *ngIf="hasError('apellido','required')">name invalido
+      </div>
+    </div>
+
+    <div>
+      <label for="dni" class="form-label">tipoDni</label>
+      <select class="form-select" id="dni" formControlName="tipoDni">
+        <option value="dni">DNI</option>
+        <option value="pasaporte">pasaporte</option>
+        <option value="tarjeta">Tarjeta</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <app-dni [tipoDni]="tipoDni">
+
+      </app-dni>
+    </div>
+
 
     <div class="mb-3">
       <label for="email" class="form-label">Email</label>
-      <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+      <input [ngClass]="{'is-invalid': hasError('email','required')||hasError('email','email')}" type="email"
+        class="form-control" id="email" name="email" formControlName="email">
+      <div class="form-text text-danger" *ngIf="hasError('email','required')">email invalido</div>
+      <div class="form-text text-danger" *ngIf="hasError('email','email')">email invalido</div>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">enviar</button>
   </form>
-
 </div>

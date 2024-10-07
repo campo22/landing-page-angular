@@ -1,0 +1,8 @@
+<form action [formGroup]="formularioDocumento">
+  <label for="name" class="form-label">{{variabbleNueva}}</label>
+  <input [ngClass]="{'is-invalid': hasError('dni','required')||hasError('dni','minlength')}" type="text"
+    class="form-control" id="name" name="name" formControlName="dni">
+  <div class="form-text text-danger" *ngIf="hasError('dni','required')">{{variabbleNueva}}</div>
+  <div class="form-text text-danger" *ngIf="hasError('dni','minlength')">{{variabbleNueva}} requiere minimo 3 caracteres
+  </div>
+</form>

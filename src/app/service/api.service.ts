@@ -12,7 +12,25 @@ export class ApiService {
   constructor(private _httpClient: HttpClient) { }
 
   public getProducts(): Observable<IProducto[]> {
-
     return this._httpClient.get<IProducto[]>(this.baseUrl);
+  }
+
+  public getProductById(id: number): Observable<IProducto> {
+    return this._httpClient.get<IProducto>(`${this.baseUrl}/${id}`);
+  }
+
+  public getProductCategory(): Observable<IProducto[]> {
+    return this._httpClient.get<IProducto[]>(`${this.baseUrl}/category`);
+  }
+  public posProduct(product: IProducto): Observable<IProducto> {
+    return this._httpClient.post<IProducto>(this.baseUrl, product);
+  }
+
+  public putProduct(product: IProducto, id: number): Observable<IProducto> {
+    return this._httpClient.put<IProducto>(`${this.baseUrl}/${id}`, product);
+  }
+
+  public deleteProduct(id: number): Observable<IProducto> {
+    return this._httpClient.delete<IProducto>(`${this.baseUrl}/${id}`);
   }
 }

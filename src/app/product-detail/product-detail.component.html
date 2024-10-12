@@ -1,6 +1,9 @@
-<ng-container *ngIf="!loding">
-  <H1 [ngStyle]=""> AQUI ESTA EL DETALLE DE: {{product?.name|uppercase}} </H1>
-  <H2 [ngStyle]="{'color':color}">{{product?.price | currency}}</H2>
-  <H3 *ngIf="product?.description">{{product?.description| uppercase}}</H3>
+<ng-container *ngIf="!loading"> <!-- Cambiado de loding a loading -->
+  <h1>Product Detail: {{product?.title | uppercase}} </h1>
+  <h2 [ngStyle]="{'color': color}">{{product?.price | currency}}</h2>
+  <h3 *ngIf="product?.description">{{product?.description | uppercase}}</h3>
 </ng-container>
-<ng-container *ngIf="loding"> <i style="color: blueviolet;"> Cargando informacion...</i> </ng-container>
+
+<ng-container *ngIf="loading"> <!-- Cambiado de loding a loading -->
+  <i style="color: blueviolet;"> Cargando información...</i>
+</ng-container>
